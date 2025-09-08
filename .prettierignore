@@ -1,0 +1,19 @@
+build/
+.next/
+.open-next/
+.wrangler
+.node_modules
+
+# Ignora archivos específicos
+wrangler.jsonc
+tsconfig.json
+next.config.js
+open-next.config.ts
+settings.json
+eslint.config.mjs
+package.json
+package-lock.json
+yarn.lock
+
+
+# Ignorar todos los archivos de una extensión específica

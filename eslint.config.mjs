@@ -10,6 +10,21 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
+  {
+    ignores: [
+      "node_modules/**",
+      "ignoreFile.js",
+      ".next",
+      ".open-next",
+      ".wrangler",
+      ".dev.vars",
+      "cloudflare-env.d.ts",
+      "eslint.config.mjs",
+      "next.config.js",
+      "open-next.config.ts",
+      "wrangler.jsonc",
+    ],
+  },
   ...compat.extends("next/core-web-vitals", "next/typescript"),
 ];
 

@@ -1,20 +1,35 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Image from "next/image"
+import styles from "./page.module.css"
 
-import logger from '@/utils/logger'
+import log from "@/utils/log"
+import Button from "@/components/Button/Button"
+import ListItems from "@/components/ListItems/ListItems"
 
 export default function Home() {
-
-  logger.debug('-------')
-  logger.info(`Request de info`);
-  logger.error("Request de fallo")
-  logger.debug('-------')
-  logger.warn("Request de warning")
-  logger.debug('-------')
-  logger.fatal("Request de fatal")
-  logger.debug('-------')
-  logger.trace("Request de trace")
-  logger.debug('-------')
+  const command = {
+    Id: 1,
+  }
+  log.info(`The location {Id: ${command.Id}} already exit`)
+  const Schema = {
+    test: true,
+  }
+  const Host = {
+    ip: "192.168.1.1",
+  }
+  log.info(`Request, {${Schema.test}}, {${Host.ip}}`)
+  // log.info('hola mundo server',{
+  //   type: 'error',
+  //   errorCode: 123,
+  //   errorMessage: 'No se pudo consultar la data, al hacer fetch'
+  // })
+  const ex = {
+    Message: "fallo en la consulta de pruebas",
+  }
+  log.error(`Error occurred when calling product microservice {${ex.Message}}`)
+  log.error({
+    code: 10001,
+    message: "some errors found",
+  })
 
   return (
     <div className={styles.page}>
@@ -31,8 +46,10 @@ export default function Home() {
           <li>
             Get started by editing <code>src/app/page.tsx</code>.
           </li>
-          <li>Pruebas locales, hola.</li>
+          <li>Pruebas locales, hola mundo pruebas.</li>
         </ol>
+
+        <ListItems />
 
         <div className={styles.ctas}>
           <a
@@ -103,7 +120,8 @@ export default function Home() {
           />
           Go to nextjs.org →
         </a>
+        <Button />
       </footer>
     </div>
-  );
+  )
 }
