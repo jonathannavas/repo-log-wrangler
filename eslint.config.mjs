@@ -26,7 +26,13 @@ const eslintConfig = [
       "wrangler.jsonc",
     ],
   },
-  ...compat.extends("next/core-web-vitals", "next/typescript", "prettier"),
+  ...compat.config({
+    extends: ["next/core-web-vitals", "next/typescript", "plugin:prettier/recommended"],
+    plugins: ["prettier"],
+    rules: {
+      "prettier/prettier": "error",
+    },
+  }),
 ];
 
 export default eslintConfig;
