@@ -26,7 +26,7 @@ const eslintConfig = [
       "wrangler.jsonc",
     ],
   },
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
+  ...compat.extends("next/core-web-vitals", "next/typescript", "prettier"),
 ];
 
 export default eslintConfig;
