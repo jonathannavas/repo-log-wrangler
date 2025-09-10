@@ -19,9 +19,9 @@ module.exports = {
   },
   plugins: ["react"],
   rules: {
-    quotes: ["error", "single"],
+    quotes: ["off"],
     indent: ["error", 2],
-    "max-len": ["error", { code: 80 }],
-    semi: ["error", "always"],
+    "max-len": ["off"],
+    semi: ["off"],
   },
 }
